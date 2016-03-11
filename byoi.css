@@ -1,0 +1,223 @@
+@ font-face {
+  font-family: "Courier";
+  src: local("Courier"), url("Courier.tff");
+}
+
+/*---------- BOOTSTRAP GRID PADDING ----------*/
+
+.byoi-gutter [class*="col-"] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.button-gutter [class*="col-"] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.no-gutter [class*="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*---------- BACKGROUNDS ----------*/
+
+.background1 {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  margin-left: 0%;
+  background-image: url("../BYOI-Team1/images/terminal2.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.background2 {
+  background: rgba(0, 1, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+.jumbotron {
+  background: rgba(0, 1, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/*---------- FIELDS ----------*/
+
+::-webkit-input-placeholder {
+  color: green;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: green;
+}
+.header {
+  background: rgba(0, 10, 0, 0.4);
+  box-shadow: 0 0 2px 1px green;
+  align-self: center;
+  width: 100%;
+}
+.header h1 {
+  font-family: "Courier";
+  font-size: 30px;
+  color: green;
+  text-shadow: 0px 0px 5px;
+  opacity: 1;
+  text-align: center;
+  cursor: default;
+}
+.tasks {
+  background: rgba(0, 10, 0, 0.4);
+  box-shadow: 0 0 2px 1px green;
+  height: 300px;
+}
+.tasks h2 {
+  font-family: "Courier";
+  font-size: 20px;
+  color: green;
+  text-shadow: 0px 0px 5px;
+  opacity: 1;
+  text-align: center;
+  cursor: default;
+}
+.messageList {
+  margin-top: 20px;
+  height: 500px;
+  background: rgba(0, 10, 0, 0.4);
+  box-shadow: 0 0 2px 1px green;
+}
+.messageList textarea {
+  font-family: "Courier";
+  font-size: 20px;
+  color: green;
+  text-shadow: 0px 0px 10px;
+  background: rgba(0, 10, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  outline-style: none;
+  border: none;
+  resize: none;
+  cursor: pointer;
+}
+.textBox {
+  background: rgba(0, 10, 0, 0.4);
+  box-shadow: 0 0 2px 1px green;
+  height: 90px;
+}
+.textBox textarea {
+  font-family: "Courier";
+  font-size: 20px;
+  color: green;
+  vertical-align: middle;
+  text-align: left;
+  text-shadow: 0px 0px 10px;
+  background: rgba(0, 10, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  outline-color: green;
+  outline-style: none;
+  border: none;
+  resize: none;
+}
+textarea:focus {
+  background: rgba(0, 0, 0, 0.9);
+}
+#messageBoxDiv {}
+#nodeBoxDiv {
+  margin-left: 10px;
+}
+#nodeBox {
+  font-size: 16px;
+  line-height: 30px;
+}
+.buttonPanel {
+  box-shadow: 0 0 2px 1px green;
+  background: rgba(0, 10, 0, 0.4);
+  outline-color: green;
+  outline-style: none;
+  border: none;
+  resize: none;
+  height;
+  50px;
+}
+
+/*---------- BUTTONS ----------*/
+
+.preferencesButton {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  align-self: center;
+  opacity: 0.3;
+  cursor: pointer;
+  ;
+  margin-bottom: 10px;
+}
+.preferencesButton:hover {
+  opacity: 0.5;
+}
+.preferencesMenu {
+  font-family: "Courier";
+  font-size: 20px;
+  color: green;
+  text-shadow: 0px 0px 5px;
+  height: 230px;
+  background: rgba(0, 10, 0, 0.4);
+  box-shadow: 0 0 2px 1px green;
+}
+.button {
+  background: rgba(0, 10, 0, 0.4);
+  box-shadow: 0 0 2px 1px green;
+  height: 44px;
+}
+.button p {
+  font-family: "Courier";
+  font-size: 20px;
+  color: green;
+  text-align: center;
+  text-shadow: 0px 0px 5px;
+  line-height: 40px;
+}
+.button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  cursor: crosshair;
+  box-shadow: 0 0 2px 2px green;
+}
+#sendButton {
+  height: 90px;
+  line-height: 90px;
+}
+#sendButton p {
+  line-height: 90px;
+}
+#addButton {
+  margin-bottom: 1px;
+  line-height: 40px;
+}
+#encyptButton {
+  margin-top: 1px;
+}
+#randomButton {
+  margin-bottom: 1px;
+  margin-right: 10px;
+}
+#randomButton p {
+  font-size: 18px;
+}
+#addChecksumButton {
+  margin-top: 1px;
+  margin-right: 10px;
+}
+
+/*---------- BUTTON ICONS----------*/
+
+#randomButtonIcon {}
