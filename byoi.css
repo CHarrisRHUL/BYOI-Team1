@@ -6,12 +6,12 @@
 /*---------- BOOTSTRAP GRID PADDING ----------*/
 
 .byoi-gutter [class*="col-"] {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 .button-gutter [class*="col-"] {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
 }
 .no-gutter [class*="col-"] {
   padding-left: 0;
@@ -88,8 +88,8 @@
   cursor: default;
 }
 .messageList {
-  margin-top: 20px;
-  height: 500px;
+  margin-top: 2.5%;
+  min-height: 500px;
   background: rgba(0, 10, 0, 0.4);
   box-shadow: 0 0 2px 1px green;
 }
@@ -133,11 +133,12 @@ textarea:focus {
 }
 #messageBoxDiv {}
 #nodeBoxDiv {
-  margin-left: 10px;
+  margin-left: 15%;
 }
 #nodeBox {
   font-size: 16px;
   line-height: 30px;
+  text-align: center;
 }
 .buttonPanel {
   box-shadow: 0 0 2px 1px green;
@@ -146,8 +147,7 @@ textarea:focus {
   outline-style: none;
   border: none;
   resize: none;
-  height;
-  50px;
+  height: 50%;
 }
 
 /*---------- BUTTONS ----------*/
@@ -155,15 +155,15 @@ textarea:focus {
 .preferencesButton {
   margin-left: auto;
   margin-right: auto;
-  width: 50px;
+  width: 10%;
   align-self: center;
-  opacity: 0.3;
+  opacity: 0.4;
   cursor: pointer;
   ;
-  margin-bottom: 10px;
+  margin-bottom: 3%;
 }
 .preferencesButton:hover {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .preferencesMenu {
   font-family: "Courier";
@@ -196,8 +196,7 @@ textarea:focus {
   height: 90px;
   line-height: 90px;
 }
-#sendButton p {
-  line-height: 90px;
+#sendButton:hover {
 }
 #addButton {
   margin-bottom: 1px;
@@ -220,4 +219,33 @@ textarea:focus {
 
 /*---------- BUTTON ICONS----------*/
 
-#randomButtonIcon {}
+#randomButtonIcon {
+  opacity: 0.4;
+}
+#randomButtonIcon:hover {
+  opacity: 0.6;
+}
+#sendButtonIcon {
+  opacity: 0.4;
+  margin-left: 10%;
+}
+#encyptButtonIcon {
+  opacity: 0.4;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+#encyptButtonIcon:hover {
+  opacity: 0.6;
+}
+#addButtonIcon {
+  opacity: 0.4;
+}
+#addButtonIcon:hover {
+  opacity: 0.6;
+}
+#addChecksumButtonIcon {
+  opacity: 0.4;
+}
+#addChecksumButtonIcon:hover {
+  opacity: 0.6;
+}
