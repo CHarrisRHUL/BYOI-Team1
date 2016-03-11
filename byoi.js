@@ -4,6 +4,7 @@ var main = function() {
 
   /* Hides the preferencesMenu on page load */
   $(".preferencesMenu").hide();
+  $("#splitButton").hide();
 
   /* Sends the string in the messageBox when the sendButton is clicked */
   $('.sendButton').click(function() {
