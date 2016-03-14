@@ -1,124 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <title>BYOI Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!-- Links to the scripts required for the use of bootstrap and jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+
+  <!-- http://www.myersdaily.org/joseph/javascript/md5.js -->
+  <script src="../md5/md5.js"></script>
+  <!-- include BYOI jQuery plugin -->
+  <script src="../BYOI/byoi.js"></script>
+  <!-- Link to the JQuery files -->
+  <script src="js/bindings.js"></script>
+  <!-- include BYOI configuration -->
+  <script src="js/config.js"></script>
+
   <!-- Uses the bootstrap css as well as a local css, The local overrides the bootstrap -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="byoi.css">
-  <!-- Links to the scripts required for the use of bootstrap and jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
-  <!-- Link to the JQuery files -->
-  <script src="byoi.js"></script>
-  <!-- include BYOI jQuery plugin -->
-  <script src="../BYOI/byoi.js"></script>
-  <!-- include BYOI configuration -->
-  <script src="js/config.js"></script>
-  <!-- include all the button handlers and websocket connection -->
-  <script src="js/bindings.js"></script>
 </head>
 
 <body>
   <div class="background1">
     <div class="background2">
       <div class="jumbotron">
-        <div class="container-fluid">
-          <!-- The top area of the application -->
-          <div class="row byoi-gutter">
-            <!-- A column to pad the side of the page -->
-            <div class="col-md-1"></div>
-            <!-- The column containing the title box -->
-            <div class="col-md-10">
-              <div class="header">
-                <h1>Build Your Own Internet</h1>
-              </div><!-- header -->
-            </div><!-- col-md-10 -->
-            <!-- A column to pad the side of the page -->
-            <div class="col-md-1"></div>
-          </div><!-- row byoi-gutter -->
-          <!-- The main area of the application -->
-          <div class="row byoi-gutter">
-            <!-- A column to pad the side of the page -->
-            <div class="col-md-1"></div>
-            <!-- A column for the tasks and preferences -->
-            <div class="col-md-3">
-              <div class="tasks">
-                <h2>Tasks:</h2>
-                <div>
-                  <!--<textarea rows = "10" readonly="true"></textarea>-->
+        <div class="button" id="connectButton">
+          <p>Connect</p>
+        </div>
+        <div id="main">
+          <div class="container-fluid">
+            <!-- The top area of the application -->
+            <div class="row byoi-gutter">
+              <!-- A column to pad the side of the page -->
+              <div class="col-md-1"></div>
+              <!-- The column containing the title box -->
+              <div class="col-md-10">
+                <div class="header">
+                  <h1>Build Your Own Internet</h1>
                 </div>
-              </div><!-- tasks -->
-              <div>
-                <p></p>
+                <!-- header -->
               </div>
-              <div>
-                <div class="preferencesButton">
-                  <img src="../BYOI-Team1/images/cog.png" height="50px" width="50px" id="preferencesCog"/>
-                </div><!-- preferencesButton -->
-                <div class="preferencesMenu">
-
-                </div><!-- preferencesMenu -->
-              </div>
-            </div><!-- col-md-3 -->
-            <!-- A column for the main message list and message box -->
-            <div class="col-md-7">
-              <div class="messageList">
-              </div><!-- messageList -->
-              <div>
-                <p></p>
-              </div>
-              <div class="row button-gutter">
-                <!-- A column for node box -->
-                <div class="col-md-1">
-                  <div class="textBox" id="nodeBoxDiv">
-                    <textarea id="nodeBox" rows="1" placeholder="Node" wrap="hard"></textarea>
-                  </div><!--nodeBoxDiv -->
-                </div><!-- col-md-1 -->
-                <!-- A column for message box -->
-                <div class="col-md-8">
-                  <div class="textBox" id="messageBoxDiv">
-                    <textarea id="messageBox" rows="1" placeholder="Type your message here" wrap="hard"></textarea>
-                  </div><!-- messageBoxDiv -->
-                </div><!-- col-md-8 -->
-                <!-- A column for send button -->
-                <div class="col-md-1">
-                  <div class="button" id="sendButton">
-                    <img src="../BYOI-Team1/images/send.png" height="60%" width="80%" id="sendButtonIcon"/>
-                  </div><!-- sendButton -->
-                  <div class="button" id="splitButton">
-                    <img src="../BYOI-Team1/images/split.png" height="100%" width="100%" id="splitButtonIcon"/>
+              <!-- col-md-10 -->
+              <!-- A column to pad the side of the page -->
+              <div class="col-md-1"></div>
+            </div>
+            <!-- row byoi-gutter -->
+            <!-- The main area of the application -->
+            <div class="row byoi-gutter">
+              <!-- A column to pad the side of the page -->
+              <div class="col-md-1"></div>
+              <!-- A column for the tasks and preferences -->
+              <div class="col-md-3">
+                <div class="tasks">
+                  <div id="systemMessages">
+                    <h2>Tasks:</h2>
+                    <div id="systemMessage">
+                    </div>
                   </div>
-                </div><!-- col-md-1 -->
-                <!-- A column for add and encrypt buttons -->
-                <div class="col-md-1">
-                  <div class="button" id="addButton">
-                    <img src="../BYOI-Team1/images/add.png" height="100%" width="100%" id="addButtonIcon"/>
-                  </div><!-- addButton -->
-                  <div class="button" id="encyptButton">
-                    <img src="../BYOI-Team1/images/lock.png" height="80%" width="80%" id="encyptButtonIcon"/>
-                  </div><!-- encyptButton -->
-                </div><!-- col-md-1 -->
-                <div class="col-md-1">
-                  <div class="button" id="randomButton">
-                    <img src="../BYOI-Team1/images/randomnum.png" height="100%" width="100%" id="randomButtonIcon"/>
-                  </div><!-- randomButton -->
-                  <div class="button" id="addChecksumButton">
-                    <img src="../BYOI-Team1/images/addchecksum.png" height="100%" width="100%" id="addChecksumButtonIcon"/>
-                  </div><!-- addChecksumButton -->
-                </div><!-- col-md-1 -->
-              </div><!-- row button-gutter -->
-            </div><!-- col-md-7 -->
-            <!-- A column to pad the side of the page -->
-            <div class="col-md-1"></div>
-          </div><!-- row byoi-gutter -->
-        </div><!-- container-fluid -->
-      </div><!-- jumbotron -->
-    </div><!-- background2 -->
-  </div><!-- background1 -->
+                </div>
+                <!-- tasks -->
+                <div>
+                  <p></p>
+                </div>
+                <div>
+                  <div class="preferencesButton">
+                    <img src="../BYOI-Team1/images/cog.png" height="50px" width="50px" id="preferencesCog" />
+                  </div>
+                  <!-- preferencesButton -->
+                  <div class="preferencesMenu">
+
+                  </div>
+                  <!-- preferencesMenu -->
+                </div>
+              </div>
+              <!-- col-md-3 -->
+              <!-- A column for the main message list and message box -->
+              <div class="col-md-7">
+                <div class="messageList" id="messageList">
+                </div><!-- messageList -->
+                <div>
+                  <p></p>
+                </div>
+                <div class="row button-gutter">
+                  <!-- A column for node box -->
+                  <div class="col-md-1">
+                    <div class="textBox" id="nodeBoxDiv">
+                      <!--<textarea id="nodeBox" rows="1" placeholder="Node" wrap="hard"></textarea>-->
+                      <input id="recipient" type="number" placeholder="Node"/>
+                    </div>
+                    <!--nodeBoxDiv -->
+                  </div>
+                  <!-- col-md-1 -->
+                  <!-- A column for message box -->
+                  <div class="col-md-8">
+                    <div class="textBox" id="messageBoxDiv">
+                      <!--<textarea id="messageBox" rows="1" placeholder="Type your message here" wrap="hard"></textarea>-->
+                      <input id="msg" type="text" placeholder="Type your message here" />
+                    </div>
+                    <!-- messageBoxDiv -->
+                  </div>
+                  <!-- col-md-8 -->
+                  <!-- A column for send button -->
+                  <div class="col-md-1">
+                    <div class="button" id="sendButton">
+                      <img src="../BYOI-Team1/images/send.png" height="60%" width="80%" id="sendButtonIcon" />
+                    </div>
+                    <!-- sendButton -->
+                    <div class="button" id="splitButton">
+                      <img src="../BYOI-Team1/images/split.png" height="100%" width="100%" id="splitButtonIcon" />
+                    </div>
+                  </div>
+                  <!-- col-md-1 -->
+                  <!-- A column for add and encrypt buttons -->
+                  <div class="col-md-1">
+                    <div class="button" id="addButton">
+                      <img src="../BYOI-Team1/images/add.png" height="100%" width="100%" id="addButtonIcon" />
+                    </div>
+                    <!-- addButton -->
+                    <div class="button" id="encryptButton">
+                      <img src="../BYOI-Team1/images/lock.png" height="80%" width="80%" id="encryptButtonIcon" />
+                    </div>
+                    <!-- encryptButton -->
+                  </div>
+                  <!-- col-md-1 -->
+                  <div class="col-md-1">
+                    <div class="button" id="randomButton">
+                      <img src="../BYOI-Team1/images/randomnum.png" height="100%" width="100%" id="randomButtonIcon" />
+                    </div>
+                    <!-- randomButton -->
+                    <div class="button" id="addChecksumButton">
+                      <img src="../BYOI-Team1/images/addchecksum.png" height="100%" width="100%" id="addChecksumButtonIcon" />
+                    </div>
+                    <!-- addChecksumButton -->
+                  </div>
+                  <!-- col-md-1 -->
+                </div>
+                <!-- row button-gutter -->
+              </div>
+              <!-- col-md-7 -->
+              <!-- A column to pad the side of the page -->
+              <div class="col-md-1"></div>
+            </div>
+            <!-- row byoi-gutter -->
+          </div>
+          <!-- container-fluid -->
+        </div>
+        <!-- main -->
+      </div>
+      <!-- jumbotron -->
+    </div>
+    <!-- background2 -->
+  </div>
+  <!-- background1 -->
 </body>
 
 </html>
